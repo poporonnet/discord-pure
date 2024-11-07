@@ -2,15 +2,30 @@
   "name": "@tufusa/discord-pure",
   "version": "0.1.0",
   "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "scripts": {},
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [],
-  "author": "tufusa",
+  "author": "tufusa <me@tufusa.net>",
   "license": "MIT",
   "packageManager": "pnpm@9.12.3",
   "dependencies": {
+    "@mikuroxina/mini-fn": "^6.7.0",
+    "discord-api-types": "^0.37.103",
     "typescript": "^5.6.3"
   }
 }

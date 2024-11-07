@@ -5,8 +5,10 @@
   "compilerOptions": {
     "target": "ES2023",
     "module": "ESNext",
-    "allowJs": false,
+    "declaration": true,
+    "sourceMap": true,
     "outDir": "dist",
+    "allowJs": false,
     "moduleResolution": "Bundler",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

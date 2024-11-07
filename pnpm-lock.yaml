@@ -8,11 +8,23 @@ importers:
 
   .:
     dependencies:
+      '@mikuroxina/mini-fn':
+        specifier: ^6.7.0
+        version: 6.7.0
+      discord-api-types:
+        specifier: ^0.37.103
+        version: 0.37.103
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
 
 packages:
+
+  '@mikuroxina/mini-fn@6.7.0':
+    resolution: {integrity: sha512-MHXlDpiJYIomov57vgCSAdTZbNMVGHoNTbEeZJtShDrWmohuqsIQ2ZBu0GXZ6Co/fowQw16hMti/PM0vXiFDTQ==}
+
+  discord-api-types@0.37.103:
+    resolution: {integrity: sha512-r+qitxXKe2l6KFw5odPdZSSqdEou+7eNC7BfbZ7mny5Me/K06wCTeKUMVeH/YsI9+4QQudskeQ307kr/7ppQ1A==}
 
   typescript@5.6.3:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
@@ -20,5 +32,9 @@ packages:
     hasBin: true
 
 snapshots:
+
+  '@mikuroxina/mini-fn@6.7.0': {}
+
+  discord-api-types@0.37.103: {}
 
   typescript@5.6.3: {}
