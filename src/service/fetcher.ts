@@ -1,10 +1,13 @@
-import { Record, Result } from "@mikuroxina/mini-fn";
-import { RESTError } from "discord-api-types/v10";
+import { type Record, Result } from "@mikuroxina/mini-fn";
+import type { RESTError } from "discord-api-types/v10";
 
 type QueryParameters = Partial<Record<string, string | number>>;
 
 export class FetcherService {
-  constructor(private token: string, private baseUrl: string) {}
+  constructor(
+    private token: string,
+    private baseUrl: string
+  ) {}
 
   async get<Data extends object>(
     path: string,
