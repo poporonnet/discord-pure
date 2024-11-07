@@ -13,12 +13,10 @@
   },
   "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "check": "biome check --write"
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "keywords": [],
   "author": "tufusa <me@tufusa.net>",
   "license": "MIT",
@@ -27,5 +25,8 @@
     "@mikuroxina/mini-fn": "^6.7.0",
     "discord-api-types": "^0.37.103",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
   }
 }
