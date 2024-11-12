@@ -4,7 +4,7 @@ import type {
   RESTGetAPIChannelMessagesQuery,
   RESTGetAPIChannelMessagesResult,
 } from "discord-api-types/rest";
-import type { RESTError } from "discord-api-types/v10";
+import { Routes, type RESTError } from "discord-api-types/v10";
 import type { FetcherService } from "../fetcher";
 
 export class FetchMessageService {
@@ -16,13 +16,13 @@ export class FetchMessageService {
   ): Promise<
     Result.Result<RESTError | Error, RESTGetAPIChannelMessagesResult>
   > {
-    return this.fetcher.get(`/channels/${channelId}/messages`, { ...query });
+    return this.fetcher.get(Routes.channelMessages(channelId), { ...query });
   }
 
   async fetch(
     channelId: string,
     messageId: string
   ): Promise<Result.Result<RESTError | Error, RESTGetAPIChannelMessageResult>> {
-    return this.fetcher.get(`/channels/${channelId}/messages/${messageId}`);
+    return this.fetcher.get(Routes.channelMessage(channelId, messageId));
   }
 }
