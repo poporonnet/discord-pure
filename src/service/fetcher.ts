@@ -32,13 +32,16 @@ export class FetcherService {
     }
   }
 
-  async post<Data extends object>(path: string, body: object): Promise<Result.Result<RESTError | Error, Data>> {
+  async post<Data extends object>(
+    path: string,
+    body: object
+  ): Promise<Result.Result<RESTError | Error, Data>> {
     const url = this.url(path);
 
     try {
       const response = await fetch(url, {
         method: "GET",
-        headers: this.header()
+        headers: this.header(),
       });
 
       const data = await response.json();

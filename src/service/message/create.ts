@@ -1,11 +1,11 @@
-import { Result } from "@mikuroxina/mini-fn";
+import type { Result } from "@mikuroxina/mini-fn";
 import {
-  RESTError,
-  RESTPostAPIChannelMessageJSONBody,
-  RESTPostAPIChannelMessageResult,
+  type RESTError,
+  type RESTPostAPIChannelMessageJSONBody,
+  type RESTPostAPIChannelMessageResult,
   Routes,
 } from "discord-api-types/v10";
-import { FetcherService } from "../fetcher";
+import type { FetcherService } from "../fetcher";
 
 export class CreateMessageService {
   constructor(private readonly fetcher: FetcherService) {}
