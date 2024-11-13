@@ -14,7 +14,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "check": "biome check --write"
+    "check": "biome check --write",
+    "check:ci": "biome ci"
   },
   "files": ["dist", "README.md"],
   "keywords": [],
