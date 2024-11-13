@@ -12,7 +12,7 @@ export class CreateMessageService {
 
   /**
    * Create a message in a channel.
-   * cf. https://discord.com/developers/docs/resources/message#create-message
+   * @see https://discord.com/developers/docs/resources/message#create-message
    */
   async create(
     channelId: string,

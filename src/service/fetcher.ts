@@ -18,10 +18,7 @@ export class FetcherService {
     try {
       const response = await fetch(url, {
         method: "GET",
-        headers: {
-          ...this.header(),
-          "Content-Type": "application/json",
-        },
+        headers: this.header(),
       });
 
       const data = await response.json();
@@ -35,7 +32,7 @@ export class FetcherService {
     }
   }
 
-  async post<Body extends object,Data extends object>(
+  async post<Body extends object, Data extends object>(
     path: string,
     body: Body
   ): Promise<Result.Result<RESTError | Error, Data>> {
@@ -44,7 +41,10 @@ export class FetcherService {
     try {
       const response = await fetch(url, {
         method: "POST",
-        headers: this.header(),
+        headers: {
+          ...this.header(),
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(body),
       });
 

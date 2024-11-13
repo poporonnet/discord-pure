@@ -8,8 +8,8 @@ import type {
   RESTPostAPIChannelMessageResult,
 } from "discord-api-types/v10";
 import type { FetcherService } from "../service/fetcher";
-import { FetchMessageService } from "../service/message/fetch";
 import { CreateMessageService } from "../service/message/create";
+import { FetchMessageService } from "../service/message/fetch";
 
 export class MessageController {
   private readonly fetchMessage: FetchMessageService;
@@ -40,7 +40,7 @@ export class MessageController {
    * Create a message in a channel.
    * @param channelId Channel ID to send message
    * @param body Message contents, embeds, etc.
-   * @returns success: {@link RESTGetAPIChannelMessageResult} or error: {@link RESTError} or {@link Error}
+   * @returns success: {@link RESTGetAPIChannelMessageResult} , error: {@link RESTError} or {@link Error}
    */
   async create(
     channelId: string,
