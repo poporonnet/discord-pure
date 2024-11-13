@@ -1,0 +1,25 @@
+import { Result } from "@mikuroxina/mini-fn";
+import {
+  RESTError,
+  RESTPostAPIChannelMessageJSONBody,
+  RESTPostAPIChannelMessageResult,
+  Routes,
+} from "discord-api-types/v10";
+import { FetcherService } from "../fetcher";
+
+export class CreateMessageService {
+  constructor(private readonly fetcher: FetcherService) {}
+
+  /**
+   * Create a message in a channel.
+   * cf. https://discord.com/developers/docs/resources/message#create-message
+   */
+  async create(
+    channelId: string,
+    body: RESTPostAPIChannelMessageJSONBody
+  ): Promise<
+    Result.Result<RESTError | Error, RESTPostAPIChannelMessageResult>
+  > {
+    return this.fetcher.post(Routes.channelMessages(channelId), body);
+  }
+}

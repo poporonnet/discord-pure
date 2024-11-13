@@ -32,6 +32,26 @@ export class FetcherService {
     }
   }
 
+  async post<Data extends object>(path: string, body: object): Promise<Result.Result<RESTError | Error, Data>> {
+    const url = this.url(path);
+
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: this.header()
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        return Result.err(data as RESTError);
+      }
+
+      return Result.ok(data as Data);
+    } catch (e) {
+      return Result.err(Error(`Failed to \`POST ${url}\``, { cause: e }));
+    }
+  }
+
   private url(path: string, query?: QueryParameters): string {
     const queryString = Object.entries(query || {})
       .map(([key, value]) => `${key}=${value}`)
