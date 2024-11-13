@@ -4,15 +4,20 @@ import type {
   RESTGetAPIChannelMessageResult,
   RESTGetAPIChannelMessagesQuery,
   RESTGetAPIChannelMessagesResult,
+  RESTPostAPIChannelMessageJSONBody,
+  RESTPostAPIChannelMessageResult,
 } from "discord-api-types/v10";
 import type { FetcherService } from "../service/fetcher";
 import { FetchMessageService } from "../service/message/fetch";
+import { CreateMessageService } from "../service/message/create";
 
 export class MessageController {
-  private fetchMessage: FetchMessageService;
+  private readonly fetchMessage: FetchMessageService;
+  private readonly createMessage: CreateMessageService;
 
   constructor(fetcher: FetcherService) {
     this.fetchMessage = new FetchMessageService(fetcher);
+    this.createMessage = new CreateMessageService(fetcher);
   }
 
   async getAll(
@@ -29,5 +34,20 @@ export class MessageController {
     messageId: string
   ): Promise<Result.Result<RESTError | Error, RESTGetAPIChannelMessageResult>> {
     return this.fetchMessage.fetch(channelId, messageId);
+  }
+
+  /**
+   * Create a message in a channel.
+   * @param channelId Channel ID to send message
+   * @param body Message contents, embeds, etc.
+   * @returns success: {@link RESTGetAPIChannelMessageResult} or error: {@link RESTError} or {@link Error}
+   */
+  async create(
+    channelId: string,
+    body: RESTPostAPIChannelMessageJSONBody
+  ): Promise<
+    Result.Result<RESTError | Error, RESTPostAPIChannelMessageResult>
+  > {
+    return this.createMessage.create(channelId, body);
   }
 }

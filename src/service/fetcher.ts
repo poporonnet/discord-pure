@@ -32,16 +32,17 @@ export class FetcherService {
     }
   }
 
-  async post<Data extends object>(
+  async post<Body extends object,Data extends object>(
     path: string,
-    body: object
+    body: Body
   ): Promise<Result.Result<RESTError | Error, Data>> {
     const url = this.url(path);
 
     try {
       const response = await fetch(url, {
-        method: "GET",
+        method: "POST",
         headers: this.header(),
+        body: JSON.stringify(body),
       });
 
       const data = await response.json();
@@ -50,8 +51,8 @@ export class FetcherService {
       }
 
       return Result.ok(data as Data);
-    } catch (e) {
-      return Result.err(Error(`Failed to \`POST ${url}\``, { cause: e }));
+    } catch (err) {
+      return Result.err(Error(`Failed to \`POST ${url}\``, { cause: err }));
     }
   }
 
