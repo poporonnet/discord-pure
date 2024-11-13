@@ -7,4 +7,12 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }
