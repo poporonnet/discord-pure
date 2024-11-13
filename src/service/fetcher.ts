@@ -18,7 +18,10 @@ export class FetcherService {
     try {
       const response = await fetch(url, {
         method: "GET",
-        headers: this.header(),
+        headers: {
+          ...this.header(),
+          "Content-Type": "application/json",
+        },
       });
 
       const data = await response.json();
