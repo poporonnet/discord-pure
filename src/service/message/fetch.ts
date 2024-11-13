@@ -4,7 +4,7 @@ import type {
   RESTGetAPIChannelMessagesQuery,
   RESTGetAPIChannelMessagesResult,
 } from "discord-api-types/rest";
-import { Routes, type RESTError } from "discord-api-types/v10";
+import { type RESTError, Routes } from "discord-api-types/v10";
 import type { FetcherService } from "../fetcher";
 
 export class FetchMessageService {
