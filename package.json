@@ -1,8 +1,11 @@
 {
   "name": "@poporonnet/discord-pure",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The library to communicate with pure discord REST API.",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +26,11 @@
   },
   "author": "tufusa <me@tufusa.net> & Poporon Network",
   "license": "MIT",
-  "keywords": ["discord", "bot", "api"],
+  "keywords": [
+    "discord",
+    "bot",
+    "api"
+  ],
   "scripts": {
     "build": "tsc",
     "check": "biome check --write",
