@@ -1,7 +1,9 @@
 {
-  "name": "@tufusa/discord-pure",
+  "name": "@poporonnet/discord-pure",
   "version": "0.1.0",
-  "description": "",
+  "description": "The library to communicate with pure discord REST API.",
+  "files": ["dist", "README.md"],
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -11,17 +13,22 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "type": "module",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poporonnet/discord-pure.git"
+  },
+  "bugs": {
+    "url": "https://github.com/poporonnet/discord-pure/issues"
+  },
+  "author": "tufusa <me@tufusa.net> & Poporon Network",
+  "license": "MIT",
+  "keywords": ["discord", "bot", "api"],
   "scripts": {
     "build": "tsc",
     "check": "biome check --write",
     "check:ci": "biome ci"
   },
-  "files": ["dist", "README.md"],
-  "keywords": [],
-  "author": "tufusa <me@tufusa.net>",
-  "license": "MIT",
-  "packageManager": "pnpm@9.12.3",
   "dependencies": {
     "@mikuroxina/mini-fn": "^6.7.0",
     "discord-api-types": "^0.37.103",
@@ -29,5 +36,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4"
-  }
+  },
+  "packageManager": "pnpm@9.12.3"
 }
