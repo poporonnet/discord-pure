@@ -59,6 +59,33 @@ export class FetcherService {
     }
   }
 
+  async patch<Body extends object, Data extends object>(
+    path: string,
+    body: Body
+  ): Promise<Result.Result<RESTError | Error, Data>> {
+    const url = this.url(path);
+
+    try {
+      const response = await fetch(url, {
+        method: "PATCH",
+        headers: {
+          ...this.header(),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        return Result.err(data as RESTError);
+      }
+
+      return Result.ok(data as Data);
+    } catch (err) {
+      return Result.err(Error(`Failed to \`PATCH ${url}\``, { cause: err }));
+    }
+  }
+
   private url(path: string, query?: QueryParameters): string {
     const queryString = Object.entries(query || {})
       .map(([key, value]) => `${key}=${value}`)
