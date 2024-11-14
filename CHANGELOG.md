@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/poporonnet/discord-pure/compare/discord-pure-v0.2.0...discord-pure-v0.3.0) (2024-11-14)
+
+
+### Features
+
+* 自身のギルドメンバー情報の編集を実装 ([#27](https://github.com/poporonnet/discord-pure/issues/27)) ([4eb25dc](https://github.com/poporonnet/discord-pure/commit/4eb25dca595e03e87747653aee96a3bd46a229d1))
+
 ## [0.2.0](https://github.com/poporonnet/discord-pure/compare/discord-pure-v0.1.0...discord-pure-v0.2.0) (2024-11-13)
 
 
