@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@mikuroxina/mini-fn": "^6.7.0",
-    "discord-api-types": "^0.37.103",
-    "typescript": "^5.6.3"
+    "discord-api-types": "^0.37.103"
   },
   "devDependencies": {
+    "typescript": "5.6.3",
     "@biomejs/biome": "1.9.4"
   },
   "packageManager": "pnpm@9.12.3"
