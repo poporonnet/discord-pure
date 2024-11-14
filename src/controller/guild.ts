@@ -16,8 +16,8 @@ export class GuildController {
 
   /**
    * Modify the current member in a guild.
-   * @param guildId Guild ID to modify member
-   * @param body Member
+   * @param guildId Guild ID to modify current member
+   * @param body Member parameters to set
    */
   async modifyCurrentMember(
     guildId: string,
