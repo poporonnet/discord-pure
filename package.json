@@ -34,7 +34,8 @@
   "scripts": {
     "build": "tsc",
     "check": "biome check --write",
-    "check:ci": "biome ci"
+    "check:ci": "biome ci",
+    "doc": "typedoc src/index.ts"
   },
   "dependencies": {
     "@mikuroxina/mini-fn": "^6.7.0",
