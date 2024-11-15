@@ -35,7 +35,7 @@
     "build": "tsc",
     "check": "biome check --write",
     "check:ci": "biome ci",
-    "doc": "typedoc src/index.ts"
+    "doc": "typedoc --skipErrorChecking src/index.ts src/controller/*.ts"
   },
   "dependencies": {
     "@mikuroxina/mini-fn": "^6.7.0",
