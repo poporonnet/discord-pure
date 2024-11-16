@@ -28,6 +28,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+      pages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,6 +43,14 @@ jobs:
           cache: pnpm
       - name: Install
         run: pnpm install --frozen-lockfile
+      - name: Generate docs
+        run: pnpm doc
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: "./docs"
+      - name: Deploy docs to GitHub Pages
+        uses: actions/deploy-pages@v4
       - name: Build
         run: pnpm run build
       - name: Publish to npm
