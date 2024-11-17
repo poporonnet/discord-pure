@@ -24,6 +24,7 @@
   "bugs": {
     "url": "https://github.com/poporonnet/discord-pure/issues"
   },
+  "homepage": "https://poporonnet.github.io/discord-pure",
   "author": "tufusa <me@tufusa.net> & Poporon Network",
   "license": "MIT",
   "keywords": [
@@ -34,15 +35,17 @@
   "scripts": {
     "build": "tsc",
     "check": "biome check --write",
-    "check:ci": "biome ci"
+    "check:ci": "biome ci",
+    "doc": "typedoc --skipErrorChecking src/index.ts src/controller/*.ts"
   },
   "dependencies": {
     "@mikuroxina/mini-fn": "^6.7.0",
     "discord-api-types": "^0.37.103"
   },
   "devDependencies": {
-    "typescript": "5.6.3",
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "typedoc": "0.26.11",
+    "typescript": "5.6.3"
   },
   "packageManager": "pnpm@9.12.3"
 }

@@ -11,6 +11,9 @@ import type { FetcherService } from "../service/fetcher";
 import { CreateMessageService } from "../service/message/create";
 import { FetchMessageService } from "../service/message/fetch";
 
+/**
+ * Controller for message features.
+ */
 export class MessageController {
   private readonly fetchMessage: FetchMessageService;
   private readonly createMessage: CreateMessageService;
@@ -20,6 +23,15 @@ export class MessageController {
     this.createMessage = new CreateMessageService(fetcher);
   }
 
+  /**
+   * Retrieve the messages in a channel.
+   * @param channelId Channel ID to get messages.
+   * @param option Query options to filter messages.
+   * @example Retrieving the last 10 messages in the channel.
+   * ```
+   * const result = await client.message.getMany("CHANNEL_ID", { limit: 10 });
+   * ```
+   */
   async getMany(
     channelId: string,
     option?: RESTGetAPIChannelMessagesQuery
@@ -29,6 +41,15 @@ export class MessageController {
     return this.fetchMessage.fetchMany(channelId, option);
   }
 
+  /**
+   * Retrieve a message in a channel.
+   * @param channelId Channel ID to get message.
+   * @param messageId Message ID to get.
+   * @example Retrieving a specific message.
+   * ```
+   * const result = await client.message.get("CHANNEL_ID", "MESSAGE_ID");
+   * ```
+   */
   async get(
     channelId: string,
     messageId: string
@@ -37,10 +58,13 @@ export class MessageController {
   }
 
   /**
-   * Create a message in a channel.
-   * @param channelId Channel ID to send message
+   * Post a message to a channel.
+   * @param channelId Channel ID to send message.
    * @param body Message contents, embeds, etc.
-   * @returns success: {@link RESTGetAPIChannelMessageResult} , error: {@link RESTError} or {@link Error}
+   * @example Posting a text message.
+   * ```
+   * const result = await client.message.create("CHANNEL_ID", { content: "Hello, world!" });
+   * ```
    */
   async create(
     channelId: string,
