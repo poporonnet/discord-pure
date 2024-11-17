@@ -10,7 +10,8 @@
           "path": "jsr.json",
           "jsonpath": "$.version"
         }
-      ]
+      ],
+      "include-component-in-tag": false
     }
   }
 }
