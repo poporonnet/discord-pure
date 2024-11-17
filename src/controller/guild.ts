@@ -7,6 +7,9 @@ import type {
 import type { FetcherService } from "../service/fetcher";
 import { ModifyGuildMemberService } from "../service/guild/modifyMember";
 
+/**
+ * Controller for guild features.
+ */
 export class GuildController {
   private readonly modifyMember: ModifyGuildMemberService;
 
@@ -18,7 +21,7 @@ export class GuildController {
    * Modify the current member in a guild.
    * @param guildId Guild ID to modify current member.
    * @param body Member parameters to set.
-   * @example Changing current member's nickname to "Alice".
+   * @example Changing current member's nickname.
    * ```
    * const result = await client.guild.modifyCurrentMember("GUILD_ID", { nick: "Alice" });
    * ```

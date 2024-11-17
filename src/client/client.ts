@@ -2,6 +2,13 @@ import { GuildController } from "../controller/guild";
 import { MessageController } from "../controller/message";
 import { FetcherService } from "../service/fetcher";
 
+/** Discord API client.
+ * @example
+ * ```
+ * const client = new Client("BOT_TOKEN");
+ * await client.message.create("CHANNEL_ID", { content: "Bot is up." });
+ * ```
+ */
 export class Client {
   private readonly baseUrl = "https://discord.com/api/v10";
 
@@ -10,10 +17,6 @@ export class Client {
 
   /**
    * @param token Bot token.
-   * @example
-   * ```
-   * const client = new Client("BOT_TOKEN");
-   * ```
    */
   constructor(token: string) {
     const fetcher = new FetcherService(token, this.baseUrl);
