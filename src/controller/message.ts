@@ -29,16 +29,16 @@ export class MessageController {
    * @param option Query options to filter messages.
    * @example Retrieving the last 10 messages in the channel.
    * ```
-   * const result = await client.message.getAll("CHANNEL_ID", { limit: 10 });
+   * const result = await client.message.getMany("CHANNEL_ID", { limit: 10 });
    * ```
    */
-  async getAll(
+  async getMany(
     channelId: string,
     option?: RESTGetAPIChannelMessagesQuery
   ): Promise<
     Result.Result<RESTError | Error, RESTGetAPIChannelMessagesResult>
   > {
-    return this.fetchMessage.fetchAll(channelId, option);
+    return this.fetchMessage.fetchMany(channelId, option);
   }
 
   /**

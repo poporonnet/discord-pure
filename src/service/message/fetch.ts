@@ -14,7 +14,7 @@ export class FetchMessageService {
    * Get messages in a channel.
    * @see https://discord.com/developers/docs/resources/message#get-channel-messages
    */
-  async fetchAll(
+  async fetchMany(
     channelId: string,
     query?: RESTGetAPIChannelMessagesQuery
   ): Promise<
