@@ -20,13 +20,13 @@ export class MessageController {
     this.createMessage = new CreateMessageService(fetcher);
   }
 
-  async getAll(
+  async getMany(
     channelId: string,
     option?: RESTGetAPIChannelMessagesQuery
   ): Promise<
     Result.Result<RESTError | Error, RESTGetAPIChannelMessagesResult>
   > {
-    return this.fetchMessage.fetchAll(channelId, option);
+    return this.fetchMessage.fetchMany(channelId, option);
   }
 
   async get(

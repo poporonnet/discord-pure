@@ -10,7 +10,7 @@ import type { FetcherService } from "../fetcher";
 export class FetchMessageService {
   constructor(private fetcher: FetcherService) {}
 
-  async fetchAll(
+  async fetchMany(
     channelId: string,
     query?: RESTGetAPIChannelMessagesQuery
   ): Promise<
