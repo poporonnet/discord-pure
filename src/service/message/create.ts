@@ -11,7 +11,7 @@ export class CreateMessageService {
   constructor(private readonly fetcher: FetcherService) {}
 
   /**
-   * Create a message in a channel.
+   * Create a message on a channel.
    * @see https://discord.com/developers/docs/resources/message#create-message
    */
   async create(

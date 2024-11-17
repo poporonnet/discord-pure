@@ -10,6 +10,10 @@ import type { FetcherService } from "../fetcher";
 export class FetchMessageService {
   constructor(private fetcher: FetcherService) {}
 
+  /**
+   * Get messages in a channel.
+   * @see https://discord.com/developers/docs/resources/message#get-channel-messages
+   */
   async fetchAll(
     channelId: string,
     query?: RESTGetAPIChannelMessagesQuery
@@ -19,6 +23,10 @@ export class FetchMessageService {
     return this.fetcher.get(Routes.channelMessages(channelId), { ...query });
   }
 
+  /**
+   * Get a message in a channel.
+   * @see https://discord.com/developers/docs/resources/message#get-channel-message
+   */
   async fetch(
     channelId: string,
     messageId: string

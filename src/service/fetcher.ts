@@ -4,11 +4,28 @@ import type { RESTError } from "discord-api-types/v10";
 type QueryParameters = Partial<Record<string, string | number>>;
 
 export class FetcherService {
+  /**
+   * @param token Bot token.
+   * @param baseUrl Base URL of the API without trailing slash.
+   * @example
+   * ```
+   * const fetcher = new FetcherService("BOT_TOKEN", "https://discord.com/api/v10");
+   * ```
+   */
   constructor(
     private token: string,
     private baseUrl: string
   ) {}
 
+  /**
+   * Send `GET` request to the API.
+   * @param path Path of an endpoint.
+   * @param query Query parameters to be appended to the URL.
+   * @example Send `GET` request with some query parameters to the API.
+   * ```
+   * const result = await fetcher.get<GetUsersResult>("/users", { limit: 10 });
+   * ```
+   */
   async get<Data extends object>(
     path: string,
     query?: QueryParameters
@@ -32,6 +49,15 @@ export class FetcherService {
     }
   }
 
+  /**
+   * Send `POST` request to the API.
+   * @param path Path of an endpoint.
+   * @param body Request body to be sent.
+   * @example
+   * ```
+   * const result = await fetcher.post<PostUsersRequest, PostUsersResult>("/users", { name: "Alice" });
+   * ```
+   */
   async post<Body extends object, Data extends object>(
     path: string,
     body: Body
@@ -59,6 +85,15 @@ export class FetcherService {
     }
   }
 
+  /**
+   * Send `PATCH` request to the API.
+   * @param path Path of an endpoint.
+   * @param body Request body to be sent.
+   * @example
+   * ```
+   * const result = await fetcher.patch<PatchUserRequest, PatchUserResult>("/users/123", { name: "Bob" });
+   * ```
+   */
   async patch<Body extends object, Data extends object>(
     path: string,
     body: Body
@@ -86,6 +121,11 @@ export class FetcherService {
     }
   }
 
+  /**
+   * Build full URL of an endpoint.
+   * @param path Path of an endpoint.
+   * @param query Query parameters to be appended to the URL.
+   */
   private url(path: string, query?: QueryParameters): string {
     const queryString = Object.entries(query || {})
       .map(([key, value]) => `${key}=${value}`)
@@ -94,6 +134,9 @@ export class FetcherService {
     return `${this.baseUrl}${path}${queryString}`;
   }
 
+  /**
+   * Build common headers object for the API request.
+   */
   private header(): Record<string, string> {
     return {
       Authorization: `Bot ${this.token}`,

@@ -8,6 +8,13 @@ export class Client {
   public readonly message: MessageController;
   public readonly guild: GuildController;
 
+  /**
+   * @param token Bot token.
+   * @example
+   * ```
+   * const client = new Client("BOT_TOKEN");
+   * ```
+   */
   constructor(token: string) {
     const fetcher = new FetcherService(token, this.baseUrl);
 

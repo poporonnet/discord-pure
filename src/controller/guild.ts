@@ -16,8 +16,12 @@ export class GuildController {
 
   /**
    * Modify the current member in a guild.
-   * @param guildId Guild ID to modify current member
-   * @param body Member parameters to set
+   * @param guildId Guild ID to modify current member.
+   * @param body Member parameters to set.
+   * @example Changing current member's nickname to "Alice".
+   * ```
+   * const result = await client.guild.modifyCurrentMember("GUILD_ID", { nick: "Alice" });
+   * ```
    */
   async modifyCurrentMember(
     guildId: string,
