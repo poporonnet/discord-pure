@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.4.0](https://github.com/poporonnet/discord-pure/compare/v0.3.0...v0.4.0) (2024-11-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* `getAll`を`getMany`にリネーム ([#34](https://github.com/poporonnet/discord-pure/issues/34))
+
+### Features
+
+* `getAll`を`getMany`にリネーム ([#34](https://github.com/poporonnet/discord-pure/issues/34)) ([730c03c](https://github.com/poporonnet/discord-pure/commit/730c03c83ee5888f49e45d862cb3e0c04919b22e))
+
+
+### Miscellaneous Chores
+
+* release 0.4.0 ([#38](https://github.com/poporonnet/discord-pure/issues/38)) ([b0db0e0](https://github.com/poporonnet/discord-pure/commit/b0db0e0edb79e16933ded45e9c51ba3392a9aa81))
+
 ## [0.3.0](https://github.com/poporonnet/discord-pure/compare/discord-pure-v0.2.0...discord-pure-v0.3.0) (2024-11-14)
 
 
