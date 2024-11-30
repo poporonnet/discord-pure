@@ -13,7 +13,7 @@ importers:
         version: 6.7.0
       discord-api-types:
         specifier: ^0.37.103
-        version: 0.37.108
+        version: 0.37.109
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -138,8 +138,8 @@ packages:
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
 
-  discord-api-types@0.37.108:
-    resolution: {integrity: sha512-WVdewWLnz2BvRv8r8wYLoLwL0xPycUCvN+6OirAKoHXkn+hubR2bwAFoSPfaAMDEE2QkKGAE90mUNkwGYBlIlQ==}
+  discord-api-types@0.37.109:
+    resolution: {integrity: sha512-B4W/ao8vempNVCS4/K4CeeCGhiabTcU7ekgqJy4/RytEsgkJP9hWS0MWZMcRP3wWzU/FXi6QqqvArZTJUfc6Iw==}
 
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -367,7 +367,7 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  discord-api-types@0.37.108: {}
+  discord-api-types@0.37.109: {}
 
   emoji-regex-xs@1.0.0: {}
 
