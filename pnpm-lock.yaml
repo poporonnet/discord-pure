@@ -13,7 +13,7 @@ importers:
         version: 6.7.0
       discord-api-types:
         specifier: ^0.37.103
-        version: 0.37.111
+        version: 0.37.112
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -110,8 +110,8 @@ packages:
   brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
 
-  discord-api-types@0.37.111:
-    resolution: {integrity: sha512-22O4/mjfcLaQ8bbJorGpzFThnjhd8/exQxFscP3fnyJPo9Fk9O5GkWDIremYbvuw4YiwMfssWFniIb/iAwRqTg==}
+  discord-api-types@0.37.112:
+    resolution: {integrity: sha512-DDEt3696k7o9+Ot2a5phqsEKnwhSGfIDzXJR9V5OMba9fbvJOEhPapLXy645RkrGCEKZeoFd3qXFhrvVQSUbxQ==}
 
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
@@ -229,7 +229,7 @@ snapshots:
     dependencies:
       balanced-match: 1.0.2
 
-  discord-api-types@0.37.111: {}
+  discord-api-types@0.37.112: {}
 
   entities@4.5.0: {}
 
