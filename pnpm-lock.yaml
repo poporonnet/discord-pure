@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@mikuroxina/mini-fn':
         specifier: ^6.7.0
-        version: 6.7.0
+        version: 6.8.0
       discord-api-types:
         specifier: ^0.37.103
         version: 0.37.119
@@ -83,8 +83,8 @@ packages:
   '@gerrit0/mini-shiki@1.24.1':
     resolution: {integrity: sha512-PNP/Gjv3VqU7z7DjRgO3F9Ok5frTKqtpV+LJW1RzMcr2zpRk0ulhEWnbcNGXzPC7BZyWMIHrkfQX2GZRfxrn6Q==}
 
-  '@mikuroxina/mini-fn@6.7.0':
-    resolution: {integrity: sha512-MHXlDpiJYIomov57vgCSAdTZbNMVGHoNTbEeZJtShDrWmohuqsIQ2ZBu0GXZ6Co/fowQw16hMti/PM0vXiFDTQ==}
+  '@mikuroxina/mini-fn@6.8.0':
+    resolution: {integrity: sha512-F2zCVBwIKERxuEyQGjxlzQjmrQ2oHOQSdnYJP2LKfcZivGq5n0IziJUiBHipduItSbsYH59cKexVBwSl//O6gQ==}
 
   '@shikijs/engine-oniguruma@1.24.0':
     resolution: {integrity: sha512-Eua0qNOL73Y82lGA4GF5P+G2+VXX9XnuUxkiUuwcxQPH4wom+tE39kZpBFXfUuwNYxHSkrSxpB1p4kyRW0moSg==}
@@ -201,7 +201,7 @@ snapshots:
       '@shikijs/types': 1.24.0
       '@shikijs/vscode-textmate': 9.3.0
 
-  '@mikuroxina/mini-fn@6.7.0': {}
+  '@mikuroxina/mini-fn@6.8.0': {}
 
   '@shikijs/engine-oniguruma@1.24.0':
     dependencies:
