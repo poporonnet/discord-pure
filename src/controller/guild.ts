@@ -1,4 +1,3 @@
-import type { Result } from "@mikuroxina/mini-fn";
 import type {
   APIGuildMember,
   RESTError,
@@ -6,6 +5,7 @@ import type {
 } from "discord-api-types/v10";
 import type { FetcherService } from "../service/fetcher";
 import { ModifyGuildMemberService } from "../service/guild/modifyMember";
+import type { Result } from "../utility/result";
 
 /**
  * Controller for guild features.
@@ -29,7 +29,7 @@ export class GuildController {
   async modifyCurrentMember(
     guildId: string,
     body: RESTPatchAPICurrentGuildMemberJSONBody
-  ): Promise<Result.Result<RESTError | Error, APIGuildMember>> {
+  ): Promise<Result<APIGuildMember, RESTError | Error>> {
     return this.modifyMember.modifyCurrentMember(guildId, body);
   }
 }

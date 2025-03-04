@@ -1,10 +1,10 @@
-import type { Result } from "@mikuroxina/mini-fn";
 import {
   type APIGuildMember,
   type RESTError,
   type RESTPatchAPICurrentGuildMemberJSONBody,
   Routes,
 } from "discord-api-types/v10";
+import type { Result } from "../../utility/result";
 import type { FetcherService } from "../fetcher";
 
 export class ModifyGuildMemberService {
@@ -17,7 +17,7 @@ export class ModifyGuildMemberService {
   modifyCurrentMember(
     guildId: string,
     body: RESTPatchAPICurrentGuildMemberJSONBody
-  ): Promise<Result.Result<RESTError | Error, APIGuildMember>> {
+  ): Promise<Result<APIGuildMember, RESTError | Error>> {
     return this.fetcher.patch<
       RESTPatchAPICurrentGuildMemberJSONBody,
       APIGuildMember

@@ -1,5 +1,5 @@
-import { type Record, Result } from "@mikuroxina/mini-fn";
 import type { RESTError } from "discord-api-types/v10";
+import { Failure, type Result, Success } from "../utility/result";
 
 type QueryParameters = Partial<Record<string, string | number>>;
 
@@ -29,7 +29,7 @@ export class FetcherService {
   async get<Data extends object>(
     path: string,
     query?: QueryParameters
-  ): Promise<Result.Result<RESTError | Error, Data>> {
+  ): Promise<Result<Data, RESTError | Error>> {
     const url = this.url(path, query);
 
     try {
@@ -40,12 +40,12 @@ export class FetcherService {
 
       const data = await response.json();
       if (!response.ok) {
-        return Result.err(data as RESTError);
+        return Failure.error(data as RESTError);
       }
 
-      return Result.ok(data as Data);
+      return Success.value(data as Data);
     } catch (err) {
-      return Result.err(Error(`Failed to \`GET ${url}\``, { cause: err }));
+      return Failure.error(Error(`Failed to \`GET ${url}\``, { cause: err }));
     }
   }
 
@@ -61,7 +61,7 @@ export class FetcherService {
   async post<Body extends object, Data extends object>(
     path: string,
     body: Body
-  ): Promise<Result.Result<RESTError | Error, Data>> {
+  ): Promise<Result<Data, RESTError | Error>> {
     const url = this.url(path);
 
     try {
@@ -76,12 +76,12 @@ export class FetcherService {
 
       const data = await response.json();
       if (!response.ok) {
-        return Result.err(data as RESTError);
+        return Failure.error(data as RESTError);
       }
 
-      return Result.ok(data as Data);
+      return Success.value(data as Data);
     } catch (err) {
-      return Result.err(Error(`Failed to \`POST ${url}\``, { cause: err }));
+      return Failure.error(Error(`Failed to \`POST ${url}\``, { cause: err }));
     }
   }
 
@@ -97,7 +97,7 @@ export class FetcherService {
   async patch<Body extends object, Data extends object>(
     path: string,
     body: Body
-  ): Promise<Result.Result<RESTError | Error, Data>> {
+  ): Promise<Result<Data, RESTError | Error>> {
     const url = this.url(path);
 
     try {
@@ -112,12 +112,12 @@ export class FetcherService {
 
       const data = await response.json();
       if (!response.ok) {
-        return Result.err(data as RESTError);
+        return Failure.error(data as RESTError);
       }
 
-      return Result.ok(data as Data);
+      return Success.value(data as Data);
     } catch (err) {
-      return Result.err(Error(`Failed to \`PATCH ${url}\``, { cause: err }));
+      return Failure.error(Error(`Failed to \`PATCH ${url}\``, { cause: err }));
     }
   }
 
@@ -131,7 +131,7 @@ export class FetcherService {
       .map(([key, value]) => `${key}=${value}`)
       .join("&");
 
-    return `${this.baseUrl}${path}${queryString}`;
+    return `${this.baseUrl}${path}?${queryString}`;
   }
 
   /**

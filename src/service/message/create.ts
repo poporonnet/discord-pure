@@ -1,10 +1,10 @@
-import type { Result } from "@mikuroxina/mini-fn";
 import {
   type RESTError,
   type RESTPostAPIChannelMessageJSONBody,
   type RESTPostAPIChannelMessageResult,
   Routes,
 } from "discord-api-types/v10";
+import type { Result } from "../../utility/result";
 import type { FetcherService } from "../fetcher";
 
 export class CreateMessageService {
@@ -17,9 +17,7 @@ export class CreateMessageService {
   async create(
     channelId: string,
     body: RESTPostAPIChannelMessageJSONBody
-  ): Promise<
-    Result.Result<RESTError | Error, RESTPostAPIChannelMessageResult>
-  > {
+  ): Promise<Result<RESTPostAPIChannelMessageResult, RESTError | Error>> {
     return this.fetcher.post(Routes.channelMessages(channelId), body);
   }
 }

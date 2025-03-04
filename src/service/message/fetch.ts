@@ -1,10 +1,10 @@
-import type { Result } from "@mikuroxina/mini-fn";
 import type {
   RESTGetAPIChannelMessageResult,
   RESTGetAPIChannelMessagesQuery,
   RESTGetAPIChannelMessagesResult,
 } from "discord-api-types/rest";
 import { type RESTError, Routes } from "discord-api-types/v10";
+import type { Result } from "../../utility/result";
 import type { FetcherService } from "../fetcher";
 
 export class FetchMessageService {
@@ -17,9 +17,7 @@ export class FetchMessageService {
   async fetchMany(
     channelId: string,
     query?: RESTGetAPIChannelMessagesQuery
-  ): Promise<
-    Result.Result<RESTError | Error, RESTGetAPIChannelMessagesResult>
-  > {
+  ): Promise<Result<RESTGetAPIChannelMessagesResult, RESTError | Error>> {
     return this.fetcher.get(Routes.channelMessages(channelId), { ...query });
   }
 
@@ -30,7 +28,7 @@ export class FetchMessageService {
   async fetch(
     channelId: string,
     messageId: string
-  ): Promise<Result.Result<RESTError | Error, RESTGetAPIChannelMessageResult>> {
+  ): Promise<Result<RESTGetAPIChannelMessageResult, RESTError | Error>> {
     return this.fetcher.get(Routes.channelMessage(channelId, messageId));
   }
 }
