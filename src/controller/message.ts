@@ -1,4 +1,3 @@
-import type { Result } from "@mikuroxina/mini-fn";
 import type {
   RESTError,
   RESTGetAPIChannelMessageResult,
@@ -10,6 +9,7 @@ import type {
 import type { FetcherService } from "../service/fetcher";
 import { CreateMessageService } from "../service/message/create";
 import { FetchMessageService } from "../service/message/fetch";
+import type { Result } from "../utility/result";
 
 /**
  * Controller for message features.
@@ -35,9 +35,7 @@ export class MessageController {
   async getMany(
     channelId: string,
     option?: RESTGetAPIChannelMessagesQuery
-  ): Promise<
-    Result.Result<RESTError | Error, RESTGetAPIChannelMessagesResult>
-  > {
+  ): Promise<Result<RESTGetAPIChannelMessagesResult, RESTError | Error>> {
     return this.fetchMessage.fetchMany(channelId, option);
   }
 
@@ -53,7 +51,7 @@ export class MessageController {
   async get(
     channelId: string,
     messageId: string
-  ): Promise<Result.Result<RESTError | Error, RESTGetAPIChannelMessageResult>> {
+  ): Promise<Result<RESTGetAPIChannelMessageResult, RESTError | Error>> {
     return this.fetchMessage.fetch(channelId, messageId);
   }
 
@@ -69,9 +67,7 @@ export class MessageController {
   async create(
     channelId: string,
     body: RESTPostAPIChannelMessageJSONBody
-  ): Promise<
-    Result.Result<RESTError | Error, RESTPostAPIChannelMessageResult>
-  > {
+  ): Promise<Result<RESTPostAPIChannelMessageResult, RESTError | Error>> {
     return this.createMessage.create(channelId, body);
   }
 }
