@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/poporonnet/discord-pure/compare/v0.4.0...v0.5.0) (2025-03-10)
+
+
+### Features
+
+* 戻り値を独自のResult型に変更 ([#89](https://github.com/poporonnet/discord-pure/issues/89)) ([fe60289](https://github.com/poporonnet/discord-pure/commit/fe602892c6038428b57ce24f1204509b0172ac44))
+
 ## [0.4.0](https://github.com/poporonnet/discord-pure/compare/v0.3.0...v0.4.0) (2024-11-18)
 
 
