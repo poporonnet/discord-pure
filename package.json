@@ -39,7 +39,7 @@
     "doc": "typedoc --skipErrorChecking src/index.ts src/controller/*.ts"
   },
   "dependencies": {
-    "discord-api-types": "^0.37.103"
+    "discord-api-types": "^0.38.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
