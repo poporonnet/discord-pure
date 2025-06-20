@@ -42,7 +42,7 @@
     "discord-api-types": "^0.38.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.0",
     "typedoc": "0.28.5",
     "typescript": "5.8.3"
   },
