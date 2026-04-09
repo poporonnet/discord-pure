@@ -5,6 +5,7 @@
     "module": "ESNext",
     "declaration": true,
     "sourceMap": true,
+    "rootDir": "src",
     "outDir": "dist",
     "allowJs": false,
     "moduleResolution": "Bundler",
