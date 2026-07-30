@@ -10,7 +10,7 @@ importers:
     dependencies:
       discord-api-types:
         specifier: ^0.38.0
-        version: 0.38.51
+        version: 0.38.52
     devDependencies:
       '@biomejs/biome':
         specifier: 2.5.5
@@ -236,8 +236,8 @@ packages:
     resolution: {integrity: sha512-VZznLgtwhn+Mact9tfiwx64fA9erHH/MCXEUfB/0bX/6Fz6ny5EGTXYltMocqg4xFAQZtnO3DHWWXi8RiuN7cQ==}
     engines: {node: 18 || 20 || >=22}
 
-  discord-api-types@0.38.51:
-    resolution: {integrity: sha512-SnaFHd+b8Z3HgjEIoSA1wkstXCt6J0Zrxvny0BJZZz7AhmFSetRY3DMrIdO3LFDMeeTxF7WKornnAGxaws5Adw==}
+  discord-api-types@0.38.52:
+    resolution: {integrity: sha512-uwe9EKfbjsmgWc2fdFjvDbj+dQqx3lp7wqDCmIha0jInuU+xeQjkCK9tMMn+p7RXfdVQORCInq4cD3U2ymDmyg==}
 
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
@@ -423,7 +423,7 @@ snapshots:
     dependencies:
       balanced-match: 4.0.4
 
-  discord-api-types@0.38.51: {}
+  discord-api-types@0.38.52: {}
 
   entities@4.5.0: {}
 
